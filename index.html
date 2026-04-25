@@ -14,7 +14,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
-      /* ─── FORM EFFECTS ─── */
+      /* FORM EFFECTS */
       .form-group { position: relative; }
       .form-group input,
       .form-group select,
@@ -31,7 +31,7 @@
       .form-group label { transition: color 0.25s ease; }
       .form-group:focus-within label { color: var(--gold, #c9a84c); }
 
-      /* ─── FLOATING BUTTON ─── */
+      /*  FLOATING BUTTON  */
       .float-badge {
         position: fixed;
         bottom: 2rem; right: 2rem;
@@ -59,7 +59,7 @@
         50%      { box-shadow: 0 8px 40px rgba(201,168,76,.8), 0 0 0 12px rgba(201,168,76,.07); }
       }
 
-      /* ─── RATING SUMMARY ─── */
+      /* RATING SUMMARY */
       .rating-summary {
         display: flex; align-items: center; justify-content: center;
         gap: 1.5rem; flex-wrap: wrap;
@@ -87,7 +87,7 @@
       .rating-bar-fill { height: 100%; background: var(--gold,#c9a84c); border-radius: 10px; transition: width .8s ease; }
       .rating-bar-pct { font-size: 10px; color: var(--text-light,#bbb); font-family: var(--ff-ui,'Raleway',sans-serif); width: 28px; }
 
-      /* ─── FILTER BAR ─── */
+      /* FILTER BAR */
       .reviews-filter-bar {
         display: flex; flex-wrap: wrap; gap: 10px;
         align-items: center; justify-content: center;
@@ -150,7 +150,7 @@
       }
       .review-primary-btn i { font-size: 1rem; }
 
-      /* ─── REVIEW CARDS ─── */
+      /* REVIEW CARDS */
       #filteredReviewsGrid .testi-card {
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         display: flex; flex-direction: column;
@@ -186,7 +186,7 @@
       }
       .reviews-empty i { font-size: 2rem; display: block; margin-bottom: .75rem; color: rgba(201,168,76,.4); }
 
-      /* ─── PAGINATION ─── */
+      /* PAGINATION */
       .reviews-pagination {
         display: flex;
         align-items: center;
@@ -271,7 +271,7 @@
           Italie, Syrie, Palestine, Liban, Jordanie — revisitées avec une élégance contemporaine.
         </p>
         <div class="hero-btns animate-up delay3">
-          <a href="#menu-link" class="btn btn-gold">Découvrir le Menu</a>
+          <a href="#menu-link" class="btn btn-gold">Découvrir Notre Menu du jour</a>
           <a href="#reservation-link" class="btn btn-outline">Réserver une Table</a>
         </div>
       </div>
@@ -399,7 +399,7 @@
       </div>
     </section>
 
-    <!-- ===== MENU DU JOUR ===== -->
+    <!--  MENU DU JOUR  -->
 <section class="section daily-menu-section" id="menuDuJour">
   <div class="container">
     <div class="section-intro">
@@ -453,9 +453,7 @@
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════════
-         TESTIMONIALS — Pagination + bouton avis bien visible
-    ══════════════════════════════════════════════ -->
+    <!-- TESTIMONIALS  Pagination + bouton avis bien visible-->
     <section class="testimonials section" style="background: var(--ivory2)">
       <div class="container">
         <p class="section-label center">Avis Clients</p>
@@ -606,18 +604,19 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Mondélys – Gastronomie du Monde. Tous droits réservés.</p>
+        <p>&copy; 2026 Mondélys – Gastronomie du Monde. Tous droits réservés.</p>
       </div>
     </footer>
 
     <script src="main.js"></script>
     <script src="publicSettings.js"></script>
+    <script src="mondelys-utils.js"></script>
 
     <script>
-    /* ════════════════════════════════════════════════════════════
+    /* 
        REVIEWS — Pagination (6 par page) + Précédent / Suivant
        sans affichage du compteur "X avis trouvés"
-    ════════════════════════════════════════════════════════════ */
+     */
     (function () {
 
       const PAGE_SIZE = 6;
@@ -626,7 +625,7 @@
       let currentPage  = 0;
       let activeRating = 0;
 
-      /* ── Helpers ───────────────────────────────────────────── */
+      /*  Helpers  */
       const starText = n => '★'.repeat(n) + '☆'.repeat(5 - n);
       const esc = s => String(s)
         .replace(/&/g,'&amp;').replace(/</g,'&lt;')
@@ -650,7 +649,7 @@
         return isNaN(dt) ? '' : dt.toLocaleDateString('fr-FR', { day:'numeric', month:'short', year:'numeric' });
       }
 
-      /* ── Note globale ──────────────────────────────────────── */
+      /*  Note globale  */
       function updateRatingSummary() {
         const total = allReviews.length;
         if (!total) {
@@ -675,7 +674,7 @@
         });
       }
 
-      /* ── Compteurs filtres ─────────────────────────────────── */
+      /*  Compteurs filtres  */
       function updateFilterCounts() {
         document.getElementById('countAll').textContent = allReviews.length;
         document.getElementById('count5').textContent  = allReviews.filter(r=>r.rating===5).length;
@@ -684,7 +683,7 @@
         document.getElementById('count2').textContent  = allReviews.filter(r=>r.rating<=2).length;
       }
 
-      /* ── Appliquer le filtre et réinitialiser la page ──────── */
+      /*  Appliquer le filtre et réinitialiser la page  */
       function applyFilterAndResetPage() {
         if (activeRating === 2)     filteredList = allReviews.filter(r => r.rating <= 2);
         else if (activeRating > 0)  filteredList = allReviews.filter(r => r.rating === activeRating);
@@ -692,7 +691,7 @@
         currentPage = 0;
       }
 
-      /* ── Rendu de la grille (page courante) ─────────────────── */
+      /*  Rendu de la grille (page courante)  */
       function render() {
         const totalItems = filteredList.length;
         const totalPages = Math.ceil(totalItems / PAGE_SIZE);
@@ -743,7 +742,7 @@
         }
       }
 
-      /* ── Chargement depuis l'API ───────────────────────────── */
+      /*  Chargement depuis l'API  */
       async function loadPublicReviews() {
         try {
           var res  = await fetch(window.apiUrl('/api/reviews/public'));
@@ -758,7 +757,7 @@
         render();
       }
 
-      /* ── Pagination : Précédent / Suivant ──────────────────── */
+      /*  Pagination : Précédent / Suivant  */
       document.getElementById('prevPageBtn').addEventListener('click', function() {
         if (currentPage > 0) {
           currentPage--;
@@ -776,7 +775,7 @@
         }
       });
 
-      /* ── Filtres ───────────────────────────────────────────── */
+      /*  Filtres  */
       document.querySelectorAll('.reviews-filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           document.querySelectorAll('.reviews-filter-btn').forEach(function(b) {
@@ -789,12 +788,67 @@
         });
       });
 
-      /* ── Afficher / masquer le formulaire (bouton principal) ── */
+      /*  Afficher / masquer le formulaire (bouton principal)  */
       const showBtn = document.getElementById('showReviewBtnTop');
       const formWrapper = document.getElementById('reviewFormWrapper');
       const cancelBtn = document.getElementById('cancelReviewBtn');
+      const reviewForm = document.getElementById('reviewForm');
+      const reviewMsg = document.getElementById('reviewMsg');
+      let reviewSuccessTimeout = null;
 
+      const reviewRules = {
+        reviewName: ['required'],
+        reviewEmail: ['required', 'email'],
+        reviewRating: ['select'],
+        reviewMessage: ['required', Validator.rules.minLen(10)],
+      };
+
+      Validator.attach(reviewForm, reviewRules);
+
+      function clearReviewSuccessTimeout() {
+        if (reviewSuccessTimeout) {
+          window.clearTimeout(reviewSuccessTimeout);
+          reviewSuccessTimeout = null;
+        }
+      }
+
+      function hideReviewMessage() {
+        reviewMsg.style.display = 'none';
+        reviewMsg.innerHTML = '';
+        reviewMsg.style.background = '';
+        reviewMsg.style.border = '';
+        reviewMsg.style.color = '';
+      }
+
+      function showReviewMessage(type, message, allowHtml) {
+        const isSuccess = type === 'success';
+        reviewMsg.style.display = 'block';
+        reviewMsg.style.background = isSuccess ? 'rgba(76,175,125,0.12)' : 'rgba(224,82,82,0.08)';
+        reviewMsg.style.border = isSuccess ? '1px solid rgba(76,175,125,0.28)' : '1px solid rgba(224,82,82,0.24)';
+        reviewMsg.style.color = 'var(--text)';
+        if (allowHtml) {
+          reviewMsg.innerHTML = message;
+        } else {
+          reviewMsg.textContent = message;
+        }
+      }
+
+      function resetReviewFormState() {
+        clearReviewSuccessTimeout();
+        reviewForm.reset();
+        reviewForm.style.display = 'block';
+        hideReviewMessage();
+        reviewForm.querySelectorAll('.form-group').forEach(function(group) {
+          group.classList.remove('field-valid', 'field-invalid', 'shake');
+        });
+        reviewForm.querySelectorAll('.field-feedback').forEach(function(feedback) {
+          feedback.remove();
+        });
+      }
       showBtn.addEventListener('click', function() {
+        clearReviewSuccessTimeout();
+        hideReviewMessage();
+        reviewForm.style.display = 'block';
         formWrapper.style.display = 'block';
         showBtn.style.display = 'none'; // cache le bouton principal pendant que le formulaire est ouvert
         document.getElementById('reviewName').focus();
@@ -803,23 +857,28 @@
       cancelBtn.addEventListener('click', function() {
         formWrapper.style.display = 'none';
         showBtn.style.display = 'inline-flex';
-        document.getElementById('reviewForm').reset();
-        // Réinitialiser les éventuels messages d'erreur
-        const msgDiv = document.getElementById('reviewMsg');
-        if (msgDiv) msgDiv.style.display = 'none';
+        resetReviewFormState();
       });
 
-      /* ── Soumission ────────────────────────────────────────── */
-      document.getElementById('reviewForm').addEventListener('submit', async function(e) {
+      /*  Soumission  */
+      reviewForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
+        if (!Validator.isFormValid(reviewForm, reviewRules)) {
+          Toast.show('Veuillez corriger les champs en rouge.', 'error');
+          return;
+        }
+
         if (!document.getElementById('reviewConsent').checked) {
-          alert('Veuillez accepter la politique de confidentialité pour publier votre avis.');
+          Toast.show('Veuillez accepter la politique de confidentialite pour publier votre avis.', 'warning');
           return;
         }
 
         var btn = e.target.querySelector('button[type="submit"]');
+        var originalHTML = btn.innerHTML;
         btn.disabled = true;
+        hideReviewMessage();
+        clearReviewSuccessTimeout();
         btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:8px"></i>Publication…';
 
         var payload = {
@@ -840,16 +899,28 @@
             var body = await res.json().catch(function(){ return {}; });
             throw new Error(body.message || 'Erreur lors de la publication');
           }
-          e.target.reset();
-          formWrapper.style.display = 'none';
-          showBtn.style.display = 'inline-flex';
+          resetReviewFormState();
+          reviewForm.style.display = 'none';
+          showReviewMessage(
+            'success',
+            '<strong style="display:block;margin-bottom:0.35rem;">Avis publie avec succes</strong>Merci pour votre retour, il apparait maintenant comme les autres avis.',
+            true
+          );
           await loadPublicReviews();
-          alert('Merci ! Votre avis a été publié.');
+          Toast.show('Merci ! Votre avis a ete publie.', 'success', 6000);
+          reviewSuccessTimeout = window.setTimeout(function() {
+            resetReviewFormState();
+            formWrapper.style.display = 'none';
+            showBtn.style.display = 'inline-flex';
+          }, 3500);
+          return;
         } catch (err) {
-          alert(err.message || 'Erreur serveur. Veuillez réessayer.');
+          showReviewMessage('error', err.message || 'Erreur serveur. Veuillez reessayer.');
+          Toast.show(err.message || 'Erreur serveur. Veuillez reessayer.', 'error');
+          return;
         } finally {
           btn.disabled = false;
-          btn.innerHTML = '<i class="fas fa-paper-plane" style="margin-right:8px"></i>Publier mon avis';
+          btn.innerHTML = originalHTML;
         }
       });
 

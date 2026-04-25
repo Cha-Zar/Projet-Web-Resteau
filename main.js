@@ -217,6 +217,7 @@ const showReviewBtn = document.getElementById('showReviewBtn');
 const reviewFormWrapper = document.getElementById('reviewFormWrapper');
 const showReviewBtnWrapper = document.getElementById('showReviewBtnWrapper');
 const cancelReviewBtn = document.getElementById('cancelReviewBtn');
+const showReviewBtnTop = document.getElementById('showReviewBtnTop');
 
 if (showReviewBtn && reviewFormWrapper && showReviewBtnWrapper) {
   showReviewBtn.addEventListener('click', () => {
@@ -225,10 +226,16 @@ if (showReviewBtn && reviewFormWrapper && showReviewBtnWrapper) {
   });
 }
 
-if (cancelReviewBtn) {
+if (cancelReviewBtn && reviewFormWrapper) {
   cancelReviewBtn.addEventListener('click', () => {
     reviewFormWrapper.style.display = 'none';
-    showReviewBtnWrapper.style.display = 'block';
+    if (showReviewBtnWrapper) {
+      showReviewBtnWrapper.style.display = 'block';
+    } else if (showReviewBtnTop) {
+      showReviewBtnTop.style.display = 'inline-flex';
+    } else if (showReviewBtn) {
+      showReviewBtn.style.display = 'block';
+    }
     // Optionnel : réinitialiser le formulaire
     document.getElementById('reviewForm')?.reset();
   });

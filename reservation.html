@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    /* ─── CSS RESTENT EN PLACE (inchangés) ─── */
+    /*  CSS RESTENT EN PLACE (inchangés)  */
 
     #navbar {
       transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
@@ -49,7 +49,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ─── SCROLL REVEAL ─── */
+    /*  SCROLL REVEAL  */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -69,7 +69,7 @@
     }
     .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-    /* ─── RES-DETAIL HOVER CARD ─── */
+    /*  RES-DETAIL HOVER CARD  */
     .res-detail {
       position: relative;
       transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
@@ -101,7 +101,7 @@
       color: var(--gold, #c9a84c) !important;
     }
 
-    /* ─── FORM FIELD FOCUS EFFECTS ─── */
+    /*  FORM FIELD FOCUS EFFECTS  */
     .form-group { position: relative; }
     .form-group input,
     .form-group select,
@@ -118,13 +118,13 @@
     .form-group label { transition: color 0.25s ease; }
     .form-group:focus-within label { color: var(--gold, #c9a84c); }
 
-    /* ─── STAGGER REVEAL FOR FORM ROWS ─── */
+    /*  STAGGER REVEAL FOR FORM ROWS  */
     .form-row:nth-child(1) { transition-delay: 0.05s; }
     .form-row:nth-child(2) { transition-delay: 0.12s; }
     .form-row:nth-child(3) { transition-delay: 0.19s; }
     .form-row:nth-child(4) { transition-delay: 0.26s; }
 
-    /* ─── SUBMIT BUTTON ANIMATION ─── */
+    /*  SUBMIT BUTTON ANIMATION  */
     .btn-gold {
       position: relative;
       overflow: hidden;
@@ -148,13 +148,13 @@
     }
     .btn-gold:active { transform: translateY(0) scale(0.98); }
 
-    /* ─── RESERVATION FORM PANEL ─── */
+    /*  RESERVATION FORM PANEL  */
     .reservation-form { transition: box-shadow 0.4s ease; }
     .reservation-form:hover {
       box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 0 0 1px rgba(201,168,76,0.1);
     }
 
-    /* ─── SUCCESS MESSAGE POP ─── */
+    /*  SUCCESS MESSAGE POP  */
     .success-msg {
       animation: successPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     }
@@ -163,7 +163,7 @@
       100% { opacity: 1; transform: scale(1) translateY(0); }
     }
 
-    /* ─── FLOATING GOLD PARTICLES ─── */
+    /*  FLOATING GOLD PARTICLES  */
     .page-header { position: relative; }
     .particle {
       position: absolute;
@@ -181,7 +181,7 @@
       100% { opacity: 0; transform: translate(var(--tx, 30px), -120px) scale(0.3); }
     }
 
-    /* ─── SCROLL PROGRESS BAR ─── */
+    /*  SCROLL PROGRESS BAR  */
     .scroll-progress {
       position: fixed;
       top: 0; left: 0;
@@ -193,7 +193,7 @@
       box-shadow: 0 0 8px rgba(201,168,76,0.5);
     }
 
-    /* ─── CHECKBOX CUSTOM STYLE ─── */
+    /*  CHECKBOX CUSTOM STYLE  */
     #terms {
       appearance: none; -webkit-appearance: none;
       width: 18px !important; height: 18px;
@@ -219,7 +219,7 @@
       100% { transform: translate(-50%, -50%) scale(1); }
     }
 
-    /* ─── PAGE EXIT ─── */
+    /*  PAGE EXIT  */
     body.page-exit {
       animation: pageExit 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
     }
@@ -455,7 +455,7 @@
       <p><i class="fas fa-envelope"></i> contact@mondelys.tn</p>
     </div>
   </div>
-  <div class="footer-bottom"><p>&copy; 2024 Mondélys – Gastronomie du Monde. Tous droits réservés.</p></div>
+  <div class="footer-bottom"><p>&copy; 2026 Mondélys – Gastronomie du Monde. Tous droits réservés.</p></div>
 </footer>
 
 <script src="main.js"></script>
@@ -464,13 +464,13 @@
 <script src="mondelys-utils.js"></script>
 
 <script>
-  /* ─── PAGE LOAD ─── */
+  /*  PAGE LOAD  */
   window.addEventListener('load', () => {
     document.getElementById('pageHeader').classList.add('loaded');
     spawnParticles();
   });
 
-  /* ─── PARTICLES (inchangé) ─── */
+  /*  PARTICLES (inchangé)  */
   function spawnParticles() {
     const header = document.getElementById('pageHeader');
     for (let i = 0; i < 18; i++) {
@@ -489,7 +489,7 @@
     }
   }
 
-  /* ─── SCROLL REVEAL (inchangé) ─── */
+  /*  SCROLL REVEAL (inchangé)  */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -500,13 +500,13 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
 
-  /* ─── SCROLL PROGRESS BAR (inchangé) ─── */
+  /*  SCROLL PROGRESS BAR (inchangé)  */
   window.addEventListener('scroll', () => {
     const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     document.getElementById('scrollProgress').style.width = pct + '%';
   }, { passive: true });
 
-  /* ─── PAGE EXIT TRANSITIONS (inchangé) ─── */
+  /*  PAGE EXIT TRANSITIONS (inchangé)  */
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) return;
@@ -517,11 +517,11 @@
     });
   });
 
-  /* ─── DATE MIN ─── */
+  /*  DATE MIN  */
   document.getElementById('date').min = new Date().toISOString().split('T')[0];
 
-  /* ──────────────────────────────────────────────────────────────
-     VALIDATION TEMPS-RÉEL — Formulaire de réservation
+  /* 
+     VALIDATION TEMPS-RÉEL  Formulaire de réservation
      Règles par champ :
        - firstName, lastName : required
        - email               : required + format email
@@ -530,7 +530,7 @@
        - time                : select (valeur non vide)
        - guests              : select
      La validation s'attache via Validator.attach() dès le DOMContentLoaded.
-  ────────────────────────────────────────────────────────────────── */
+   */
   const resForm = document.getElementById('resForm');
 
   /* Règle personnalisée : la date ne peut pas être dans le passé */
@@ -553,7 +553,7 @@
   /* Attache la validation temps-réel (blur + input) */
   Validator.attach(resForm, resRules);
 
-  /* ─── SOUMISSION ─── */
+  /*  SOUMISSION  */
   resForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styleAdmin.css"/>
 
   <style>
-    /* ── Skeleton admin : shimmer identique à mondelys-utils ── */
+    /*  Skeleton admin : shimmer identique à mondelys-utils  */
     .skel-admin {
       border-radius: 6px;
       background: linear-gradient(
@@ -26,7 +26,7 @@
       100% { background-position: -200% 0; }
     }
 
-    /* ── Skeleton table row ── */
+    /*  Skeleton table row  */
     .skel-tr td {
       padding: 1rem 0.75rem;
       vertical-align: middle;
@@ -222,7 +222,7 @@
     CANCELLED: '<span class="status status-cancelled">Annulée</span>',
   };
 
-  /* ── Skeleton helpers ── */
+  /*  Skeleton helpers  */
   function showTableSkeleton(rows = 6) {
     document.getElementById('resBody').innerHTML = Array.from({ length: rows }, (_, i) => {
       const w = [70, 100, 120, 95, 105, 115][i] || 100;

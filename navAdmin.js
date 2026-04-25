@@ -36,7 +36,7 @@
 (function setupSiteLink() {
   document.querySelectorAll(".btn-sm.outline").forEach((button) => {
     if (button.textContent && button.textContent.includes("Voir le Site")) {
-      button.setAttribute("href", "/");
+      button.setAttribute("href", "index.html");
       button.setAttribute("target", "_blank");
       button.setAttribute("rel", "noopener noreferrer");
     }

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    /* ─── CSS RESTENT EN PLACE (inchangés) ─── */
+    /*  CSS RESTENT EN PLACE (inchangés)  */
 
     #navbar {
       transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
@@ -39,7 +39,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ─── SCROLL REVEAL ─── */
+    /*  SCROLL REVEAL  */
     .reveal {
       opacity: 0; transform: translateY(40px);
       transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
@@ -56,7 +56,7 @@
     }
     .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-    /* ─── CONTACT ITEM HOVER ─── */
+    /*  CONTACT ITEM HOVER  */
     .contact-item {
       position: relative;
       transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, box-shadow 0.35s ease;
@@ -76,7 +76,7 @@
     .contact-icon { transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease; }
     .contact-item:hover .contact-icon { transform: scale(1.15) rotate(-5deg); background: rgba(201,168,76,0.15); }
 
-    /* ─── FORM EFFECTS ─── */
+    /*  FORM EFFECTS  */
     .form-group { position: relative; }
     .form-group input,
     .form-group select,
@@ -93,7 +93,7 @@
     .form-group label { transition: color 0.25s ease; }
     .form-group:focus-within label { color: var(--gold, #c9a84c); }
 
-    /* ─── BUTTON ─── */
+    /*  BUTTON  */
     .btn-gold {
       position: relative; overflow: hidden;
       transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, letter-spacing 0.3s ease;
@@ -109,7 +109,7 @@
     .btn-gold:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 32px rgba(201,168,76,0.35); letter-spacing: 1.5px; }
     .btn-gold:active { transform: translateY(0) scale(0.98); }
 
-    /* ─── FAQ ENHANCED ─── */
+    /*  FAQ ENHANCED  */
     .faq-item {
       transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
     }
@@ -129,11 +129,11 @@
     }
     .faq-item.open .faq-answer { max-height: 300px; opacity: 1; }
 
-    /* ─── CONTACT FORM PANEL ─── */
+    /*  CONTACT FORM PANEL  */
     .contact-form { transition: box-shadow 0.4s ease; }
     .contact-form:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 0 0 1px rgba(201,168,76,0.1); }
 
-    /* ─── SUCCESS MESSAGE ─── */
+    /*  SUCCESS MESSAGE  */
     .success-msg {
       animation: successPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     }
@@ -142,7 +142,7 @@
       100% { opacity: 1; transform: scale(1) translateY(0); }
     }
 
-    /* ─── PARTICLES ─── */
+    /*  PARTICLES  */
     .particle {
       position: absolute;
       border-radius: 50%;
@@ -158,7 +158,7 @@
       100% { opacity: 0; transform: translate(var(--tx, 30px), -120px) scale(0.3); }
     }
 
-    /* ─── SCROLL PROGRESS ─── */
+    /*  SCROLL PROGRESS  */
     .scroll-progress {
       position: fixed; top: 0; left: 0;
       height: 2px;
@@ -168,7 +168,7 @@
       box-shadow: 0 0 8px rgba(201,168,76,0.5);
     }
 
-    /* ─── PAGE EXIT ─── */
+    /*  PAGE EXIT  */
     body.page-exit {
       animation: pageExit 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
     }
@@ -177,17 +177,17 @@
       100% { opacity: 0; transform: translateY(-20px); }
     }
 
-    /* ─── SOCIAL ICONS HOVER ─── */
+    /*  SOCIAL ICONS HOVER  */
     .socials a {
       transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
     }
     .socials a:hover { transform: translateY(-4px) scale(1.1) !important; box-shadow: 0 6px 20px rgba(201,168,76,0.25); }
 
-    /* ─── MAP PLACEHOLDER ─── */
+    /*  MAP PLACEHOLDER  */
     .map-placeholder { transition: box-shadow 0.3s ease, transform 0.3s ease; }
     .map-placeholder:hover { box-shadow: 0 8px 30px rgba(201,168,76,0.12); transform: translateY(-2px); }
 
-    /* ─── CHECKBOX CUSTOM ─── */
+    /*  CHECKBOX CUSTOM  */
     #cCo {
       appearance: none; -webkit-appearance: none;
       width: 18px !important; height: 18px;
@@ -209,7 +209,7 @@
       100% { transform: translate(-50%, -50%) scale(1); }
     }
 
-    /* ─── FAQ STAGGER ─── */
+    /*  FAQ STAGGER  */
     .faq-item:nth-child(1) { transition-delay: 0.05s; }
     .faq-item:nth-child(2) { transition-delay: 0.12s; }
     .faq-item:nth-child(3) { transition-delay: 0.19s; }
@@ -217,7 +217,7 @@
     .faq-item:nth-child(5) { transition-delay: 0.33s; }
     .faq-item:nth-child(6) { transition-delay: 0.40s; }
 
-    /* ─── FLOATING BUTTON ─── */
+    /*  FLOATING BUTTON  */
     .float-badge {
       position: fixed;
       bottom: 2rem; right: 2rem;
@@ -485,7 +485,7 @@
       <p><i class="fas fa-envelope"></i> contact@mondelys.tn</p>
     </div>
   </div>
-  <div class="footer-bottom"><p>&copy; 2024 Mondélys – Gastronomie du Monde. Tous droits réservés.</p></div>
+  <div class="footer-bottom"><p>&copy; 2026 Mondélys – Gastronomie du Monde. Tous droits réservés.</p></div>
 </footer>
 
 <script src="main.js"></script>
@@ -494,7 +494,7 @@
 <script src="mondelys-utils.js"></script>
 
 <script>
-  /* ─── PAGE LOAD ─── */
+  /*  PAGE LOAD  */
   window.addEventListener('load', () => {
     document.getElementById('pageHeader').classList.add('loaded');
     spawnParticles();
@@ -518,7 +518,7 @@
     }
   }
 
-  /* ─── SCROLL REVEAL ─── */
+  /*  SCROLL REVEAL  */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -529,13 +529,13 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 
-  /* ─── SCROLL PROGRESS ─── */
+  /*  SCROLL PROGRESS  */
   window.addEventListener('scroll', () => {
     const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     document.getElementById('scrollProgress').style.width = pct + '%';
   }, { passive: true });
 
-  /* ─── PAGE EXIT ─── */
+  /*  PAGE EXIT  */
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) return;
@@ -546,7 +546,7 @@
     });
   });
 
-  /* ─── FAQ ACCORDION ─── */
+  /*  FAQ ACCORDION  */
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.parentElement;
@@ -556,7 +556,7 @@
     });
   });
 
-  /* ──────────────────────────────────────────────────────────────
+  /* 
      VALIDATION TEMPS-RÉEL — Formulaire de contact
      Règles :
        - cFn  : required (prénom)
@@ -565,7 +565,7 @@
        - cPh  : optionnel, mais validé si rempli
        - cSu  : select (sujet non vide)
        - cMs  : required + min 10 caractères
-  ────────────────────────────────────────────────────────────────── */
+   */
   const contactForm = document.getElementById('contactForm');
   const contactRules = {
     cFn: ['required'],
@@ -579,7 +579,7 @@
   /* Attache la validation temps-réel */
   Validator.attach(contactForm, contactRules);
 
-  /* ─── SOUMISSION ─── */
+  /*  SOUMISSION  */
   document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
